@@ -18,6 +18,15 @@
 			font-family: sans-serif;
 		}
 
+		#particles-js {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: -5;
+		}
+
 		#wrapper {
 			display: flex;
 			justify-content: center;
@@ -35,13 +44,23 @@
 			box-shadow: 0 0 1.5rem 0.5rem rgba(0, 0, 0, 0.6);
 		}
 	</style>
+
+	<script src="js/particles.min.js"></script>
 </head>
 <body>
+	<div id="particles-js"></div>
+
 	<div id="wrapper">
 		<div id="content">
 			<h1>Under Construction</h1>
 			<p>This website is still under construction. Its contents are coming <i>Soon™</i>, so please check back later for any updates.</p>
 		</div>
 	</div>
+
+	<script>
+		particlesJS.load('particles-js', 'js/particles.json', function() {
+			console.log('callback - particles.js config loaded');
+		});
+	</script>
 </body>
 </html>

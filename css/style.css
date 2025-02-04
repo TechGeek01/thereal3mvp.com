@@ -152,6 +152,12 @@ body {
 	animation: noise-animation 21s infinite alternate-reverse;
 }
 
+#particles-js {
+	position: fixed;
+	inset: 0;
+	z-index: -4;
+}
+
 @keyframes noise-animation {
 	0% {
 		background-position: top left;
