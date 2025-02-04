@@ -97,7 +97,7 @@ select {
 	--content-width:  1250px;
 
 	/* Text stuff */
-	--clr-text: #eee;
+	--clr-text: #333;
 	--size-text: 1.25rem;
 }
 
@@ -110,7 +110,9 @@ select {
 	padding: 0;
 }
 
-html
+html, body {
+	min-height: 100vh;
+}
 
 body {
 	background: linear-gradient(45deg, var(--clr-bg1) 10%, var(--clr-bg1-25) 31.25%, var(--clr-bg1-50) 52.5%, var(--clr-bg1-75) 73.75%, var(--clr-bg2) 95%) fixed;
@@ -164,13 +166,19 @@ body {
  */
 
 #wrapper {
-	max-width: var(--content-width);
-	margin: 0 auto;
 	display: flex;
-	flex-direction: column;
-	height: 100%;
-	position: relative;
-	padding-inline: clamp(1rem, 8vw, 2rem);
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+	min-height: 100vh;
+}
+#content {
+	max-width: var(--content-width);
+	padding: 2rem 2.5rem;
+	background: #eee;
 	color: var(--clr-text);
 	font-weight: 400;
+	border: 1px solid #666;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 1.5rem 0.5rem rgba(0, 0, 0, 0.6);
 }
