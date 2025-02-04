@@ -191,3 +191,14 @@ body {
 	border-radius: 0.5rem;
 	box-shadow: 0 0 1.5rem 0.5rem var(--clr-shadow-content);
 }
+
+/*
+ * Layout & general styling
+ */
+
+p + p,
+p + section,
+section + section,
+section + p {
+	margin-top: 1em;
+}
