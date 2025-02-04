@@ -91,13 +91,15 @@ select {
 	--clr-bg1-75: #36322d;
 	--clr-bg2: #393732;
 
-	--clr-wrapper: #eee;
+	--clr-content-bg: #fff2;
+	--border-content: 1px solid #3e3e3e;
+	--clr-shadow-content: #0006;
 
 	/* Layout & spacing */
 	--content-width:  1250px;
 
 	/* Text stuff */
-	--clr-text: #333;
+	--clr-text: #eee;
 	--size-text: 1.25rem;
 }
 
@@ -181,10 +183,11 @@ body {
 #content {
 	max-width: var(--content-width);
 	padding: 2rem 2.5rem;
-	background: #eee;
+	background: var(--clr-content-bg);
+	backdrop-filter: blur(0.25rem);
 	color: var(--clr-text);
 	font-weight: 400;
-	border: 1px solid #666;
+	border: var(--border-content);
 	border-radius: 0.5rem;
-	box-shadow: 0 0 1.5rem 0.5rem rgba(0, 0, 0, 0.6);
+	box-shadow: 0 0 1.5rem 0.5rem var(--clr-shadow-content);
 }
