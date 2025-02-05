@@ -91,8 +91,8 @@ select {
 	--clr-bg1-75: #36322d;
 	--clr-bg2: #393732;
 
-	--clr-content-bg: #fff2;
-	--border-content: 1px solid #3e3e3e;
+	--clr-content-bg: #a3a3a330;
+	--border-content: 1px solid #222;
 	--clr-shadow-content: #0006;
 
 	/* Layout & spacing */
