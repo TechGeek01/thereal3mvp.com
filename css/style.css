@@ -175,17 +175,31 @@ body {
 
 #wrapper {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	padding: 2rem;
 	min-height: 100vh;
+	color: var(--clr-text);
+}
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	column-gap: 2rem;
+	font-family: "Roboto", sans-serif;
+	font-size: 4.5em;
+	margin-bottom: 2rem;
+}
+header img.icon {
+	width: 10rem;
 }
 #content {
 	max-width: var(--content-width);
 	padding: 2rem 2.5rem;
 	background: var(--clr-content-bg);
 	backdrop-filter: blur(0.25rem);
-	color: var(--clr-text);
 	font-weight: 400;
 	border: var(--border-content);
 	border-radius: 0.5rem;
