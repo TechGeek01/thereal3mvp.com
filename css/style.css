@@ -216,3 +216,30 @@ section + section,
 section + p {
 	margin-top: 1em;
 }
+
+/*
+ * Responsive design stuff
+ */
+
+@media screen and (max-width: 900px) {
+	header {
+		flex-direction: column;
+		font-size: clamp(2em, 11vw, 4.5em);
+	}
+	header img.icon {
+		width: clamp(12rem, 25vw, 14rem);
+	}
+}
+
+@media screen and (max-width: 450px) {
+	#wrapper {
+		padding-inline: 0;
+		padding-bottom: 0;
+	}
+	#content {
+		border-radius: 0;
+		border-left: none;
+		border-right: none;
+		border-bottom: none;
+	}
+}
