@@ -85,11 +85,11 @@ select {
 	 */
 
 	/* General colors */
-	--clr-bg1: #242120;
-	--clr-bg1-25: #292827;
-	--clr-bg1-50: #2e2c2a;
-	--clr-bg1-75: #36322d;
-	--clr-bg2: #393732;
+	--clr-bg1: #161613;
+	--clr-bg1-25: #1a1a18;
+	--clr-bg1-50: #1f1e1a;
+	--clr-bg1-75: #252421;
+	--clr-bg2: #282824;
 
 	--clr-content-bg: #a3a3a330;
 	--border-content: 1px solid #222;
