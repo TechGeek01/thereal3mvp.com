@@ -204,7 +204,6 @@ header {
 	column-gap: 2rem;
 	font-family: "Roboto", sans-serif;
 	font-size: 4.5em;
-	margin-bottom: 2rem;
 }
 header img.icon {
 	width: 10rem;
@@ -233,7 +232,7 @@ nav {
 	font-variant: small-caps;
 	gap: 2rem;
 	font-size: 1.5rem;
-	padding-bottom: 2rem;
+	margin-block: 1rem;
 	box-sizing: content-box;
 }
 a {
