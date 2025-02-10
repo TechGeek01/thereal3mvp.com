@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald: 400,500,700');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 
 /*
@@ -90,6 +91,7 @@ select {
 	--clr-bg1-50: #1f1e1a;
 	--clr-bg1-75: #252421;
 	--clr-bg2: #282824;
+	--clr-accent: #dd3700;
 
 	--clr-content-bg: #a3a3a330;
 	--border-content: 1px solid #222;
@@ -101,6 +103,18 @@ select {
 	/* Text stuff */
 	--clr-text: #eee;
 	--size-text: 1.25rem;
+	--clr-link: var(--clr-accent);
+	--clr-link-active: var(--clr-accent);
+
+	/*
+	 * Effects & features
+	 */
+
+	/* Animations */
+	--transition-duration: 300ms;
+	/* Bezier curve to give subtle realistic bounce effect */
+	--transition-curve-default: ease-in-out;
+	--transition-curve: cubic-bezier(.18, .89, .32, 1.18);
 }
 
 /*
@@ -195,6 +209,7 @@ header {
 header img.icon {
 	width: 10rem;
 }
+
 #content {
 	max-width: var(--content-width);
 	padding: 2rem 2.5rem;
@@ -204,6 +219,54 @@ header img.icon {
 	border: var(--border-content);
 	border-radius: 0.5rem;
 	box-shadow: 0 0 1.5rem 0.5rem var(--clr-shadow-content);
+}
+
+/*
+ * Navigation
+ */
+
+nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "Oswald", sans-serif;
+	font-variant: small-caps;
+	gap: 2rem;
+	font-size: 1.5rem;
+	padding-bottom: 2rem;
+	box-sizing: content-box;
+}
+a {
+	display: inline-block;
+	position: relative;
+	padding-bottom: 0.3em;
+	text-decoration: none;
+	color: var(--clr-text);
+	transition: color var(--transition-duration) var(--transition-curve-default);
+}
+a:focus,
+a:hover {
+	color: var(--clr-link-active);
+}
+a:focus {
+	outline: none;
+}
+a::after {
+	content: '';
+	position: absolute;
+	bottom: 0.15em;
+	left: 0;
+	width: 100%;
+	height: 0.1em;
+	background: var(--clr-link-active);
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform var(--transition-duration) ease-in;
+}
+a:hover::after,
+a:focus::after {
+	transform: scaleX(1);
+	transform-origin: left;
 }
 
 /*
