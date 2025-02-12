@@ -29,7 +29,10 @@
 	--width-menu: 20rem;
 
 	/* Menu stuff */
-	--size-menu-btn: 2rem;
+	--size-menu-btn: 50px;
+	--size-menu-hamburger-spacing: 5px;
+	--size-menu-hamburger-width: 18px;
+	--size-menu-hamburger-height: 2px;
 
 	/* Text stuff */
 	--clr-text: #eee;
@@ -251,10 +254,11 @@ a:focus::after {
 		display: flex;
 		justify-content: flex-end;
 		align-items: baseline;
-		padding: 24px 16px 24px 0;
+		padding-block: calc((var(--size-menu-btn) - var(--size-menu-hamburger-height)) / 2);
+		padding-right: calc((var(--size-menu-btn) - var(--size-menu-hamburger-width)) / 2);
 		position: absolute;
-		height: 50px;
-		width: 50px;
+		height: var(--size-menu-btn);
+		width: var(--size-menu-btn);
 		user-select: none;
 		visibility: visible;
 		background: var(--clr-brand-gray);
@@ -268,15 +272,15 @@ a:focus::after {
 	.navicon {
 		background: var(--clr-text);
 		display: block;
-		height: 2px;
-		width: 18px;
+		height: var(--size-menu-hamburger-height);
+		width: var(--size-menu-hamburger-width);
 		position: relative;
 	}
 	.navicon:before {
-		top: 5px;
+		top: var(--size-menu-hamburger-spacing);
 	}
 	.navicon:after {
-		top: -5px;
+		top: calc(-1 * var(--size-menu-hamburger-spacing));
 	}
 	.navicon:before,
 	.navicon:after {
@@ -315,7 +319,7 @@ a:focus::after {
 		justify-content: start;
 		align-items: start;
 		gap: 0.5rem;
-		padding-top: 50px;
+		padding-top: var(--size-menu-btn);
 	}
 	menu:has(.menu-btn:checked) nav {
 		padding-inline: 1rem;
