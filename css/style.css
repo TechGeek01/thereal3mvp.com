@@ -208,6 +208,10 @@ a:focus::after {
 
 /* Mobile navigation */
 @media screen and (max-width: 650px) {
+	body:has(.menu-btn:checked) { /* Prevent scrolling when menu open */
+		overflow: hidden;
+	}
+
 	menu {
 		width: var(--width-menu);
 		height: 100vh;
