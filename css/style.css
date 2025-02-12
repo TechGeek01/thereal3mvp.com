@@ -247,7 +247,7 @@ a:focus::after {
 		display: flex;
 		justify-content: flex-end;
 		align-items: baseline;
-		padding: 24px 20px 24px 0;
+		padding: 24px 16px 24px 0;
 		position: absolute;
 		height: 50px;
 		width: 50px;
@@ -255,6 +255,10 @@ a:focus::after {
 		visibility: visible;
 		background: var(--clr-brand-gray);
 		border-bottom-right-radius: 0.5em;
+	}
+	menu .toggle:has(.menu-btn:checked) .menu-icon {
+		background: inherit;
+		border-radius: inherit;
 	}
 
 	.navicon {
@@ -309,7 +313,7 @@ a:focus::after {
 		gap: 0.5rem;
 		padding-top: 50px;
 	}
-	menu nav a {
+	menu:has(.menu-btn:checked) nav {
 		padding-inline: 1rem;
 	}
 }
