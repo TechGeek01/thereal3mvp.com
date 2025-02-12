@@ -165,6 +165,10 @@ menu input[type=checkbox] {
 	display: none;
 }
 
+menu {
+	display: flex;
+}
+
 nav {
 	display: flex;
 	justify-content: center;
@@ -218,12 +222,10 @@ a:focus::after {
 	menu {
 		width: var(--width-menu);
 		height: 100vh;
-		background: var(--clr-shade);
 		position: fixed;
 		z-index: 10;
 		top: 0;
 		left: calc(-1 * var(--width-menu));
-		backdrop-filter: blur(0.2rem);
 	}
 	menu:has(.menu-btn:checked) {
 		width: 100vw;
@@ -237,6 +239,12 @@ a:focus::after {
 		margin: inherit;
 		border-right: var(--border-content);
 		box-shadow: 0 0 3rem var(--clr-shadow-content);
+	}
+	menu .shade {
+		background: var(--clr-shade);
+		backdrop-filter: blur(0.2rem);
+		display: block;
+		flex-grow: 1;
 	}
 
 	menu .toggle {
