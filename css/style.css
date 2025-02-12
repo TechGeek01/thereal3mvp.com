@@ -6,20 +6,26 @@
 	 * Main stuff
 	 */
 
+	/* Branding colors */
+	--clr-brand-gray: #323230;
+	--clr-brand-white: #eee;
+	--clr-brand-red: #dd3700;
+
 	/* General colors */
 	--clr-bg1: #161613;
 	--clr-bg1-25: #1a1a18;
 	--clr-bg1-50: #1f1e1a;
 	--clr-bg1-75: #252421;
 	--clr-bg2: #282824;
-	--clr-accent: #dd3700;
+	--clr-accent: var(--clr-brand-red);
+	--clr-shade: #0006;
 
 	--clr-content-bg: #a3a3a330;
 	--border-content: 1px solid #222;
 	--clr-shadow-content: #0006;
 
 	/* Layout & spacing */
-	--content-width:  1250px;
+	--width-content:  1250px;
 
 	/* Text stuff */
 	--clr-text: #eee;
@@ -131,7 +137,7 @@ header img.icon {
 }
 
 #content {
-	max-width: var(--content-width);
+	max-width: var(--width-content);
 	padding: 2rem 2.5rem;
 	background: var(--clr-content-bg);
 	backdrop-filter: blur(0.25rem);
