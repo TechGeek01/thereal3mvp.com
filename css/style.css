@@ -216,7 +216,7 @@ a:focus::after {
 }
 
 /* Mobile navigation */
-@media screen and (max-width: 6500px) {
+@media screen and (max-width: 650px) {
 	/* Prevent scrolling when menu open */
 	body:has(.menu-btn:checked) {
 		overflow: hidden;
