@@ -27,6 +27,7 @@
 	/* Layout & spacing */
 	--width-content:  1250px;
 	--width-menu: 20rem;
+	--spacing-content-vertical: 2rem;
 
 	/* Menu stuff */
 	--size-menu-btn: 50px;
@@ -126,7 +127,8 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 2rem;
+	gap: var(--spacing-content-vertical);
+	padding: var(--spacing-content-vertical);
 	min-height: 100vh;
 	color: var(--clr-text);
 }
@@ -175,9 +177,9 @@ nav {
 	align-items: center;
 	font-family: "Oswald", sans-serif;
 	font-variant: small-caps;
-	gap: 2rem;
+	gap: var(--spacing-content-vertical);
 	font-size: 1.5rem;
-	margin-block: 1rem;
+	margin-block: calc(-1 * var(--spacing-content-vertical) / 2);
 	box-sizing: content-box;
 }
 a {
