@@ -10,11 +10,12 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-	<link rel="icon" type="image/svg+xml" href="/icons/icon.svg">
+	<link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
 	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
 	<link rel="manifest" href="/manifest.json">
 
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<script src="js/particles.min.js"></script>
 </head>
@@ -26,9 +27,28 @@
 	</div>
 	<div id="wrapper">
 		<header>
-			<img class="icon" src="icons/icon.svg" alt="TheRealEmVP logo" />
+			<img class="icon" src="assets/icons/icon.svg" alt="TheRealEmVP logo" />
 			<span>TheRealEm_VP</span>
 		</header>
+
+		<menu>
+			<div class="toggle">
+				<input type="checkbox" id="menu-btn" name="menu-btn" class="menu-btn" />
+				<label class="menu-icon" for="menu-btn">
+					<span class="navicon" aria-label="Hamburger menu icon" />
+				</label>
+			</div>
+
+			<nav>
+				<a href="#">One</a>
+				<a href="#">Two</a>
+				<a href="#">Three</a>
+				<a href="#">Four</a>
+				<a href="#">Five</a>
+			</nav>
+
+			<label class="shade" for="menu-btn"></label>
+		</menu>
 
 		<div id="content">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pharetra egestas tempus. Etiam porttitor purus vel nisi elementum lacinia. Sed consequat blandit dolor et lacinia. Proin eu ultrices mauris. Curabitur et lacus vulputate nisi efficitur porta. Vivamus sed leo a tellus lacinia varius. Nam rutrum, quam quis tincidunt finibus, lectus tortor varius risus, quis luctus tortor arcu eget risus. Duis ac nulla faucibus, fringilla quam et, molestie augue. Integer ac fermentum tortor. Aenean non diam at magna commodo hendrerit sit amet non tortor.</p>
