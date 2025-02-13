@@ -49,7 +49,7 @@
 	--transition-duration: 300ms;
 	--transition-curve-default: ease-in-out;
 	/* Bezier curve to give subtle realistic bounce effect */
-	--transition-curve: cubic-bezier(.18, .89, .32, 1.18);
+	--transition-curve-bezier: cubic-bezier(.3, .1, .7, .9);
 }
 
 /*
@@ -322,7 +322,7 @@ a:focus::after {
 		left: calc(-1 * var(--width-menu));
 		transition-property: left;
 		transition-duration: var(--transition-duration);
-		transition-timing-function: var(--transition-curve-default);
+		transition-timing-function: var(--transition-curve-bezier);
 		padding-top: var(--size-menu-btn);
 	}
 	menu .toggle:has(.menu-btn:checked) + nav {
