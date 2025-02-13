@@ -47,8 +47,8 @@
 
 	/* Animations */
 	--transition-duration: 300ms;
-	/* Bezier curve to give subtle realistic bounce effect */
 	--transition-curve-default: ease-in-out;
+	/* Bezier curve to give subtle realistic bounce effect */
 	--transition-curve: cubic-bezier(.18, .89, .32, 1.18);
 }
 
@@ -216,18 +216,17 @@ a:focus::after {
 }
 
 /* Mobile navigation */
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 6500px) {
 	body:has(.menu-btn:checked) { /* Prevent scrolling when menu open */
 		overflow: hidden;
 	}
 
 	menu {
-		width: var(--width-menu);
 		height: 100vh;
 		position: fixed;
 		z-index: 10;
 		top: 0;
-		left: calc(-1 * var(--width-menu));
+		left: 0;
 	}
 	menu:has(.menu-btn:checked) {
 		width: 100vw;
@@ -239,24 +238,39 @@ a:focus::after {
 		background: var(--clr-brand-gray);
 		color: var(--clr-text);
 		margin: inherit;
-		border-right: var(--border-content);
-		box-shadow: 0 0 3rem var(--clr-shadow-content);
+		position: fixed;
+		flex-direction: column;
+		justify-content: start;
+		align-items: start;
+		gap: 0.5rem;
+		top: 0;
+		z-index: 10;
+		left: calc(-1 * var(--width-menu));
+		transition-property: left;
+		transition-duration: var(--transition-duration);
+		transition-timing-function: var(--transition-curve-default);
+		padding-top: var(--size-menu-btn);
 	}
 	menu .shade {
-		background: var(--clr-shade);
-		backdrop-filter: blur(0.2rem);
 		display: block;
 		flex-grow: 1;
+		transition-property: background, backdrop-filter;
+		transition-duration: var(--transition-duration);
+		transition-timing-function: var(--transition-curve-default);
 	}
 
 	menu .toggle {
 		position: fixed;
 		top: 0;
-		left: var(--width-menu);
+		left: 0;
 		z-index: 15;
 	}
-	menu .toggle:has(.menu-btn:checked) {
+	menu .toggle:has(.menu-btn:checked) + nav {
 		left: 0;
+		box-shadow: 0 0 3rem var(--clr-shadow-content);	}
+	menu .toggle:has(.menu-btn:checked) + nav + .shade {
+		background: var(--clr-shade);
+		backdrop-filter: blur(0.2rem);
 	}
 
 	.menu-icon {
@@ -272,11 +286,14 @@ a:focus::after {
 		user-select: none;
 		visibility: visible;
 		background: var(--clr-brand-gray);
+		border-right: var(--border-content);
+		border-bottom: var(--border-content);
 		border-bottom-right-radius: 0.5em;
 	}
 	menu .toggle:has(.menu-btn:checked) .menu-icon {
 		background: inherit;
 		border-radius: inherit;
+		border: inherit;
 	}
 
 	.navicon {
@@ -323,14 +340,6 @@ a:focus::after {
 		z-index: 15;
 	}
 
-	menu nav {
-		height: 100%;
-		flex-direction: column;
-		justify-content: start;
-		align-items: start;
-		gap: 0.5rem;
-		padding-top: var(--size-menu-btn);
-	}
 	menu:has(.menu-btn:checked) nav {
 		padding-inline: 1rem;
 	}
