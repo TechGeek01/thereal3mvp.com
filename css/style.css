@@ -217,7 +217,8 @@ a:focus::after {
 
 /* Mobile navigation */
 @media screen and (max-width: 6500px) {
-	body:has(.menu-btn:checked) { /* Prevent scrolling when menu open */
+	/* Prevent scrolling when menu open */
+	body:has(.menu-btn:checked) {
 		overflow: hidden;
 	}
 
@@ -232,47 +233,16 @@ a:focus::after {
 		width: 100vw;
 		left: 0;
 	}
-	menu nav {
-		width: var(--width-menu);
-		height: 100vh;
-		background: var(--clr-brand-gray);
-		color: var(--clr-text);
-		margin: inherit;
-		position: fixed;
-		flex-direction: column;
-		justify-content: start;
-		align-items: start;
-		gap: 0.5rem;
-		top: 0;
-		z-index: 10;
-		left: calc(-1 * var(--width-menu));
-		transition-property: left;
-		transition-duration: var(--transition-duration);
-		transition-timing-function: var(--transition-curve-default);
-		padding-top: var(--size-menu-btn);
-	}
-	menu .shade {
-		display: block;
-		flex-grow: 1;
-		transition-property: background, backdrop-filter;
-		transition-duration: var(--transition-duration);
-		transition-timing-function: var(--transition-curve-default);
-	}
 
 	menu .toggle {
-		position: fixed;
+		position: absolute;
+		display: inherit;
 		top: 0;
 		left: 0;
 		z-index: 15;
 	}
-	menu .toggle:has(.menu-btn:checked) + nav {
-		left: 0;
-		box-shadow: 0 0 3rem var(--clr-shadow-content);	}
-	menu .toggle:has(.menu-btn:checked) + nav + .shade {
-		background: var(--clr-shade);
-		backdrop-filter: blur(0.2rem);
-	}
 
+	/* Menu icon stuff */
 	.menu-icon {
 		cursor: pointer;
 		display: flex;
@@ -296,6 +266,7 @@ a:focus::after {
 		border: inherit;
 	}
 
+	/* Navicon styling */
 	.navicon {
 		background: var(--clr-text);
 		display: block;
@@ -334,14 +305,45 @@ a:focus::after {
 		top: 0;
 	}
 
-	menu .toggle {
-		display: inherit;
-		position: absolute;
-		z-index: 15;
+	/* Navigation menu */
+	menu nav {
+		width: var(--width-menu);
+		height: 100vh;
+		background: var(--clr-brand-gray);
+		color: var(--clr-text);
+		margin: inherit;
+		position: fixed;
+		flex-direction: column;
+		justify-content: start;
+		align-items: start;
+		gap: 0.5rem;
+		top: 0;
+		z-index: 10;
+		left: calc(-1 * var(--width-menu));
+		transition-property: left;
+		transition-duration: var(--transition-duration);
+		transition-timing-function: var(--transition-curve-default);
+		padding-top: var(--size-menu-btn);
 	}
-
+	menu .toggle:has(.menu-btn:checked) + nav {
+		left: 0;
+		box-shadow: 0 0 3rem var(--clr-shadow-content);
+	}
 	menu:has(.menu-btn:checked) nav {
 		padding-inline: 1rem;
+	}
+
+	/* Content shade */
+	menu .shade {
+		display: block;
+		flex-grow: 1;
+		transition-property: background, backdrop-filter;
+		transition-duration: var(--transition-duration);
+		transition-timing-function: var(--transition-curve-default);
+	}
+	menu .toggle:has(.menu-btn:checked) + nav + .shade {
+		background: var(--clr-shade);
+		backdrop-filter: blur(0.2rem);
 	}
 }
 
