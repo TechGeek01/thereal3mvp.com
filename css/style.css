@@ -197,7 +197,7 @@ a:hover {
 a:focus {
 	outline: none;
 }
-a::after {
+a::before {
 	content: '';
 	position: absolute;
 	bottom: 0.15em;
@@ -209,8 +209,8 @@ a::after {
 	transform-origin: right;
 	transition: transform var(--transition-duration) ease-in;
 }
-a:hover::after,
-a:focus::after {
+a:hover::before,
+a:focus::before {
 	transform: scaleX(1);
 	transform-origin: left;
 }
