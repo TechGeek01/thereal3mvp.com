@@ -56,6 +56,7 @@
 				<a href="#" id='musictrigger'>Three <span class="fa-duotone fa-solid fa-caret-down" style="font-family: FontAwesome;"></span></a>
 				<a href="#">Four</a>
 				<a href="#">Five</a>
+				<a href="#" style='display:none'>Me?</a>
 			</nav>
 
 			<label class="shade" for="menu-btn"></label>
@@ -75,6 +76,32 @@
 		particlesJS.load('particles-js', 'js/particles.json', function() {
 			console.log('callback - particles.js config loaded');
 		});
+
+		// Get DOM elements
+		linkList = document.getElementsByTagName('nav')[0].getElementsByTagName('a');
+		music = document.getElementById('music');
+
+		// Music trigger click handler
+		musicPlaying = false;
+		document.getElementById('musictrigger').onclick = function() {
+			if (!musicPlaying) {
+				//Swap list elements on trigger
+				linkList[0].innerHTML = 'Hey';
+				linkList[1].innerHTML = 'Punk,';
+				linkList[2].innerHTML = 'Will';
+				linkList[3].innerHTML = 'You';
+				linkList[4].innerHTML = 'Marry';
+				linkList[5].style.display = 'inherit';
+
+				music.play();
+			} else {
+				// If music already playing, pause and reset it
+				music.pause();
+				music.currentTime = 0;
+			}
+
+			musicPlaying = !musicPlaying;
+		};
 	</script>
 </body>
 </html>
