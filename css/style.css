@@ -197,17 +197,21 @@ nav li:has(ul) > a::after {
 	content: "\f107";
 }
 nav li > ul {
-	position: absolute;
-	z-index: 10;
 	background: var(--clr-brand-gray);
 	padding: 1rem;
-	border-radius: 0.5rem;
-	border: var(--border-content);
-	box-shadow: 0 0 2rem var(--clr-shadow-content);
 	display: none;
 	gap: 0.5rem;
 	flex-direction: column;
 	font-size: 0.75em;
+}
+@media screen and (min-width: 651px) {
+	nav li > ul {
+		position: absolute;
+		z-index: 10;
+		border-radius: 0.5rem;
+		border: var(--border-content);
+		box-shadow: 0 0 2rem var(--clr-shadow-content);
+	}
 }
 nav li:hover > ul {
 	display: flex;
