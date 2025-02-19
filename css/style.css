@@ -213,7 +213,8 @@ nav li > ul {
 		box-shadow: 0 0 2rem var(--clr-shadow-content);
 	}
 }
-nav li:hover > ul {
+nav li:hover > ul,
+nav li:focus-within > ul {
 	display: flex;
 }
 
