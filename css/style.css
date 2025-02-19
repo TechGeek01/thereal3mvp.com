@@ -190,10 +190,12 @@ nav li a {
 	white-space: nowrap;
 }
 nav li:has(ul) > a::after {
+	position: relative;
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
 	font-size: 0.75em;
 	padding-left: 0.2em;
+	top: -0.1em;
 	content: "\f107";
 }
 nav li:has(ul):hover > a::after,
@@ -355,7 +357,7 @@ a:focus::before {
 		position: fixed;
 		flex-direction: column;
 		justify-content: start;
-		align-items: start;
+		align-items: stretch;
 		gap: 0.5rem;
 		top: 0;
 		z-index: 10;
@@ -369,8 +371,11 @@ a:focus::before {
 		left: 0;
 		box-shadow: 0 0 3rem var(--clr-shadow-content);
 	}
-	menu:has(.menu-btn:checked) nav {
-		padding-inline: 1rem;
+	menu nav ul {
+		background: #eeeeee18;
+	}
+	menu nav li > a{
+		margin-inline: 1rem;
 	}
 
 	/* Content shade */
