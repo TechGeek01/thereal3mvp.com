@@ -196,6 +196,10 @@ nav li:has(ul) > a::after {
 	padding-left: 0.2em;
 	content: "\f107";
 }
+nav li:has(ul):hover > a::after,
+nav li:has(ul):focus-within > a::after {
+	content: "\f106";
+}
 nav li > ul {
 	background: var(--clr-brand-gray);
 	padding: 1rem;
