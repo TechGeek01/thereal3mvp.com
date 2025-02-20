@@ -24,6 +24,13 @@
 	--border-content: 1px solid #222;
 	--clr-shadow-content: #0006;
 
+	/* Banner stuff */
+	--clr-banner-warning: #ffe33b;
+	--clr-banner-warning-border: #ecca00;
+	--clr-banner-warning-text: #222;
+	--pad-block-banner: 0.25rem;
+	--pad-inline-banner: 0.75rem;
+
 	/* Layout & spacing */
 	--width-content:  1250px;
 	--width-menu: 20rem;
@@ -154,6 +161,28 @@ header img.icon {
 	border: var(--border-content);
 	border-radius: 0.5rem;
 	box-shadow: 0 0 1.5rem 0.5rem var(--clr-shadow-content);
+}
+
+/*
+ * Banners
+ */
+
+.banner {
+	position: fixed;
+	width: 100%;
+	font-size: 1rem;
+	font-weight: 500;
+	padding: var(--pad-block-banner) var(--pad-inline-banner);
+	text-align: center;
+	z-index: 10;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	box-shadow: 0 0 0.5rem var(--clr-shadow-content);
+}
+.banner.warning {
+	background: var(--clr-banner-warning);
+	border-bottom-color: var(--clr-banner-warning-border);
+	color: var(--clr-banner-warning-text);
 }
 
 /*
