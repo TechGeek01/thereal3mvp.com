@@ -251,6 +251,11 @@ a:focus::after {
 		overflow: hidden;
 	}
 
+	/* Make sure menu button doesn't obscure banner content */
+	.banner {
+		padding-left: calc(var(--pad-inline-banner) + var(--size-menu-btn));
+	}
+
 	menu {
 		height: 100vh;
 		position: fixed;
