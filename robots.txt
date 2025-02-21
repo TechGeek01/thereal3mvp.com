@@ -1,0 +1,14 @@
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: GPTbot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: nsa
+Disallow: /
+
+Sitemap: https://therealemvp.com/sitemap.xml
+Sitemap: https://www.therealemvp.com/sitemap.xml

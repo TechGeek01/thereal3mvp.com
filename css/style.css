@@ -24,9 +24,17 @@
 	--border-content: 1px solid #222;
 	--clr-shadow-content: #0006;
 
+	/* Banner stuff */
+	--clr-banner-warning: #ffe33b;
+	--clr-banner-warning-border: #ecca00;
+	--clr-banner-warning-text: #222;
+	--pad-block-banner: 0.25rem;
+	--pad-inline-banner: 0.75rem;
+
 	/* Layout & spacing */
 	--width-content:  1250px;
 	--width-menu: 20rem;
+	--spacing-menu-vertical: 0.5rem;
 	--spacing-content-vertical: 2rem;
 
 	/* Menu stuff */
@@ -157,6 +165,28 @@ header img.icon {
 }
 
 /*
+ * Banners
+ */
+
+.banner {
+	position: fixed;
+	width: 100%;
+	font-size: 1rem;
+	font-weight: 500;
+	padding: var(--pad-block-banner) var(--pad-inline-banner);
+	text-align: center;
+	z-index: 10;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	box-shadow: 0 0 0.5rem var(--clr-shadow-content);
+}
+.banner.warning {
+	background: var(--clr-banner-warning);
+	border-bottom-color: var(--clr-banner-warning-border);
+	color: var(--clr-banner-warning-text);
+}
+
+/*
  * Navigation
  */
 
@@ -169,19 +199,64 @@ menu input[type=checkbox] {
 
 menu {
 	display: flex;
+	flex-wrap: wrap;
+	max-width: var(--width-content);
 }
 
 nav {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
 	font-family: "Oswald", sans-serif;
 	font-variant: small-caps;
-	gap: var(--spacing-content-vertical);
+	gap: var(--spacing-menu-vertical) 2rem;
 	font-size: 1.5rem;
 	margin-block: calc(-1 * var(--spacing-content-vertical) / 2);
 	box-sizing: content-box;
 }
+nav li {
+	list-style: none;
+	display: inline-block;
+}
+nav li a {
+	white-space: nowrap;
+}
+nav li:has(ul) > a::after {
+	position: relative;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 0.75em;
+	padding-left: 0.2em;
+	top: -0.1em;
+	content: "\f107";
+}
+nav li:has(ul):hover > a::after,
+nav li:has(ul):focus-within > a::after {
+	content: "\f106";
+}
+nav li > ul {
+	background: var(--clr-brand-gray);
+	padding: 1rem;
+	display: none;
+	gap: 0.5rem;
+	flex-direction: column;
+	font-size: 0.75em;
+}
+@media screen and (min-width: 651px) {
+	nav li > ul {
+		position: absolute;
+		z-index: 10;
+		border-radius: 0.5rem;
+		border: var(--border-content);
+		box-shadow: 0 0 2rem var(--clr-shadow-content);
+	}
+}
+nav li:hover > ul,
+nav li:focus-within > ul {
+	display: flex;
+}
+
 a {
 	display: inline-block;
 	position: relative;
@@ -197,7 +272,7 @@ a:hover {
 a:focus {
 	outline: none;
 }
-a::after {
+a::before {
 	content: '';
 	position: absolute;
 	bottom: 0.15em;
@@ -209,8 +284,8 @@ a::after {
 	transform-origin: right;
 	transition: transform var(--transition-duration) ease-in;
 }
-a:hover::after,
-a:focus::after {
+a:hover::before,
+a:focus::before {
 	transform: scaleX(1);
 	transform-origin: left;
 }
@@ -220,6 +295,11 @@ a:focus::after {
 	/* Prevent scrolling when menu open */
 	body:has(.menu-btn:checked) {
 		overflow: hidden;
+	}
+
+	/* Make sure menu button doesn't obscure banner content */
+	.banner {
+		padding-left: calc(var(--pad-inline-banner) + var(--size-menu-btn));
 	}
 
 	menu {
@@ -235,21 +315,27 @@ a:focus::after {
 	}
 
 	menu .toggle {
-		position: absolute;
-		display: inherit;
-		top: 0;
-		left: 0;
+		width: 0;
+		height: var(--size-menu-btn);
+		display: flex;
+		justify-content: flex-start;
 		z-index: 15;
+		background: var(--clr-brand-gray);
+		transition-property: width;
+		transition-duration: var(--transition-duration);
+		transition-timing-function: var(--transition-curve-bezier);
+	}
+	menu .toggle:has(.menu-btn:checked) {
+		width: var(--width-menu);
 	}
 
 	/* Menu icon stuff */
 	.menu-icon {
 		cursor: pointer;
 		display: flex;
-		justify-content: flex-end;
 		align-items: baseline;
 		padding-block: calc((var(--size-menu-btn) - var(--size-menu-hamburger-height)) / 2);
-		padding-right: calc((var(--size-menu-btn) - var(--size-menu-hamburger-width)) / 2);
+		padding-left: calc((var(--size-menu-btn) - var(--size-menu-hamburger-width)) / 2);
 		position: absolute;
 		height: var(--size-menu-btn);
 		width: var(--size-menu-btn);
@@ -261,8 +347,6 @@ a:focus::after {
 		border-bottom-right-radius: 0.5em;
 	}
 	menu .toggle:has(.menu-btn:checked) .menu-icon {
-		background: inherit;
-		border-radius: inherit;
 		border: inherit;
 	}
 
@@ -309,13 +393,14 @@ a:focus::after {
 	menu nav {
 		width: var(--width-menu);
 		height: 100vh;
+		overflow-y: scroll;
 		background: var(--clr-brand-gray);
 		color: var(--clr-text);
 		margin: inherit;
 		position: fixed;
 		flex-direction: column;
 		justify-content: start;
-		align-items: start;
+		align-items: stretch;
 		gap: 0.5rem;
 		top: 0;
 		z-index: 10;
@@ -329,8 +414,11 @@ a:focus::after {
 		left: 0;
 		box-shadow: 0 0 3rem var(--clr-shadow-content);
 	}
-	menu:has(.menu-btn:checked) nav {
-		padding-inline: 1rem;
+	menu nav ul {
+		background: #eeeeee18;
+	}
+	menu nav li > a {
+		margin-inline: 1rem;
 	}
 
 	/* Content shade */

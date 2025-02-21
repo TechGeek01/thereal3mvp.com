@@ -25,15 +25,28 @@
 		gtag('config', 'G-EBVGK2XR4Y');
 	</script>
 
-	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/fa-v5-font-face.min.css" />
+
+	<style>
+		nav li a.expand::after {
+			position: relative;
+			font-family: "Font Awesome 5 Free";
+			font-weight: 900;
+			font-size: 0.75em;
+			padding-left: 0.2em;
+			top: -0.1em;
+			content: "\f107";
+		}
+	</style>
+
 	<script src="js/particles.min.js"></script>
 </head>
 <body>
 	<div class="noise"></div>
 	<div id="particles-js"></div>
-	<div style="position:fixed;width:100%;background:#FFE33B;color:#222;font-size:1rem;font-weight:500;padding-block:0.25rem;text-align:center;z-index:10;border-bottom:1px solid #ecca00;box-shadow:0 0 0.5rem #0006">
+	<div class="banner warning">
 		<p>This website is currently under construction. Changes may occur. Please check back <i>Soon™</i>.</p>
 	</div>
 	<div id="wrapper">
@@ -51,12 +64,12 @@
 			</div>
 
 			<nav>
-				<a href="#">One</a>
-				<a href="#">Two</a>
-				<a href="#" id='musictrigger'>Three <span class="fa-duotone fa-solid fa-caret-down" style="font-family: FontAwesome;"></span></a>
-				<a href="#">Four</a>
-				<a href="#">Five</a>
-				<a href="#" style='display:none'>Me?</a>
+				<li><a href="#">One</a></li>
+				<li><a href="#">Two</a></li>
+				<li><a href="#" id='musictrigger' class='expand'>Three</a></li>
+				<li><a href="#">Four</a></li>
+				<li><a href="#">Five</a></li>
+				<li style='display:none'><a href="#">Me?</a></li>
 			</nav>
 
 			<label class="shade" for="menu-btn"></label>
@@ -89,9 +102,10 @@
 				linkList[0].innerHTML = 'Hey';
 				linkList[1].innerHTML = 'Punk,';
 				linkList[2].innerHTML = 'Will';
+				linkList[2].classList.remove('expand');
 				linkList[3].innerHTML = 'You';
 				linkList[4].innerHTML = 'Marry';
-				linkList[5].style.display = 'inherit';
+				linkList[5].parentElement.style.display = 'inherit';
 
 				music.play();
 			} else {
