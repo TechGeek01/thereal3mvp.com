@@ -83,6 +83,8 @@ body {
 	animation: bg-animation 20s infinite alternate;
 	height: 100%;
 	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
 	font-family: "Roboto", sans-serif;
 	font-size: var(--size-text);
 }
@@ -203,11 +205,11 @@ a:focus::before {
 #wrapper {
 	display: flex;
 	flex-direction: column;
+	flex-grow: 1;
 	justify-content: center;
 	align-items: center;
 	gap: var(--spacing-content-vertical);
 	padding: var(--spacing-content-vertical);
-	min-height: 100vh;
 	color: var(--clr-text);
 }
 @media screen and (max-width: 450px) {
