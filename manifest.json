@@ -2,7 +2,7 @@
   "name": "TheRealEm_VP",
   "short_name": "TheRealEm_VP",
   "theme_color": "#dd3700",
-  "background_color": "#323230",
+  "background_color": "#282824",
   "display": "standalone",
   "scope": "/",
   "start_url": "https://therealemvp.com/",
