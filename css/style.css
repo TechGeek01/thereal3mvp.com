@@ -1,67 +1,69 @@
+/* Import fonts */
 @import url('https://fonts.googleapis.com/css?family=Oswald: 400,500,700');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 
+/*
+ * Variables
+ */
+
 :root {
-	/*
-	 * Main stuff
-	 */
-
-	/* Branding colors */
+	/* Colors & branding */
 	--clr-brand-gray: #323230;
-	--clr-brand-white: #eee;
 	--clr-brand-red: #dd3700;
+	--clr-brand-white: #eee;
 
-	/* General colors */
-	--clr-bg1: #161613;
-	--clr-bg1-25: #1a1a18;
-	--clr-bg1-50: #1f1e1a;
-	--clr-bg1-75: #252421;
-	--clr-bg2: #282824;
+	--clr-transparent-black: #0006;
+
+	/* General stuff */
 	--clr-accent: var(--clr-brand-red);
-	--clr-shade: #0006;
+	--clr-shade: var(--clr-transparent-black);
+	--clr-shadow: var(--clr-transparent-black);
 
-	--clr-content-bg: #a3a3a330;
-	--border-content: 1px solid #222;
-	--clr-shadow-content: #0006;
-
-	/* Banner stuff */
-	--clr-banner-warning: #ffe33b;
-	--clr-banner-warning-border: #ecca00;
-	--clr-banner-warning-text: #222;
-	--pad-block-banner: 0.25rem;
-	--pad-inline-banner: 0.75rem;
-
-	/* Layout & spacing */
-	--width-content:  1250px;
-	--width-menu: 20rem;
-	--spacing-menu-vertical: 0.5rem;
-	--spacing-content-vertical: 2rem;
-
-	/* Menu stuff */
-	--size-menu-btn: 50px;
-	--size-menu-hamburger-spacing: 5px;
-	--size-menu-hamburger-width: 18px;
-	--size-menu-hamburger-height: 2px;
-
-	/* Text stuff */
 	--clr-text: #eee;
 	--size-text: 1.25rem;
 	--clr-link: var(--clr-accent);
 	--clr-link-active: var(--clr-accent);
 
-	/*
-	 * Effects & features
-	 */
-
-	/* Animations */
-	--transition-duration: 300ms;
 	--transition-curve-default: ease-in-out;
-	/* Bezier curve to give subtle realistic bounce effect */
-	--transition-curve-bezier: cubic-bezier(.3, .1, .7, .9);
+	--transition-duration-link: 300ms;
+
+	/* Background */
+	--clr-bg1: #161613;
+	--clr-bg1-25: #1a1a18;
+	--clr-bg1-50: #1f1e1a;
+	--clr-bg1-75: #252421;
+	--clr-bg2: #282824;
+
+	/* Alerts */
+	--clr-banner-warning: #ffe33b;
+	--clr-banner-warning-border: #ecca00;
+	--clr-banner-warning-text: #222;
+
+	--pad-block-banner: 0.25rem;
+	--pad-inline-banner: 0.75rem;
+
+	/* Menu */
+	--clr-menu-text: var(--clr-text);
+
+	--size-menu-btn: 50px;
+	--size-menu-hamburger-spacing: 5px;
+	--size-menu-hamburger-width: 18px;
+	--size-menu-hamburger-height: 2px;
+	--spacing-menu-vertical: 0.5rem;
+	--width-menu: 20rem;
+
+	--transition-curve-menu: cubic-bezier(.3, .1, .7, .9);
+	--transition-duration-menu: 300ms;
+
+	/* Content */
+	--clr-content-bg: #a3a3a330;
+	--border-content: 1px solid #222;
+	--spacing-content-vertical: 2rem;	
+	--width-content:  1250px;
 }
 
 /*
- * Global styles
+ * Global styling
  */
 
 * {
@@ -73,6 +75,8 @@ html, body {
 	min-height: 100vh;
 }
 
+/* Body */
+/* TODO: Can the background and noise be combined as multiple background layers? */
 body {
 	background: linear-gradient(45deg, var(--clr-bg1) 10%, var(--clr-bg1-25) 31.25%, var(--clr-bg1-50) 52.5%, var(--clr-bg1-75) 73.75%, var(--clr-bg2) 95%) fixed;
 	background-size: 250%;
@@ -82,7 +86,6 @@ body {
 	font-family: "Roboto", sans-serif;
 	font-size: var(--size-text);
 }
-
 @keyframes bg-animation {
 	0% {
 		background-position: bottom left;
@@ -92,6 +95,7 @@ body {
 	}
 }
 
+/* Background effects */
 .noise, .noise::after {
 	position: fixed;
 	width: 100%;
@@ -110,13 +114,6 @@ body {
 	background-position: bottom right;
 	animation: noise-animation 21s infinite alternate-reverse;
 }
-
-#particles-js {
-	position: fixed;
-	inset: 0;
-	z-index: -4;
-}
-
 @keyframes noise-animation {
 	0% {
 		background-position: top left;
@@ -126,48 +123,59 @@ body {
 	}
 }
 
-/*
- * Core layout
- */
+#particles-js {
+	position: fixed;
+	inset: 0;
+	z-index: -4;
+}
 
-#wrapper {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	gap: var(--spacing-content-vertical);
-	padding: var(--spacing-content-vertical);
-	min-height: 100vh;
+/* General styling */
+p + p,
+p + section,
+section + section,
+section + p {
+	margin-top: 1em;
+}
+
+/* Links */
+a {
+	display: inline-block;
+	position: relative;
+	padding-bottom: 0.3em;
+	text-decoration: none;
 	color: var(--clr-text);
+	transition: color var(--transition-duration-link) var(--transition-curve-default);
 }
-header {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: center;
-	column-gap: 2rem;
-	font-family: "Roboto", sans-serif;
-	font-size: 4.5em;
+a:focus,
+a:hover {
+	color: var(--clr-link-active);
 }
-header img.icon {
-	width: 10rem;
+a:focus {
+	outline: none;
 }
-
-#content {
-	max-width: var(--width-content);
-	padding: 2rem 2.5rem;
-	background: var(--clr-content-bg);
-	backdrop-filter: blur(0.25rem);
-	font-weight: 400;
-	border: var(--border-content);
-	border-radius: 0.5rem;
-	box-shadow: 0 0 1.5rem 0.5rem var(--clr-shadow-content);
+a::before {
+	content: '';
+	position: absolute;
+	bottom: 0.15em;
+	left: 0;
+	width: 100%;
+	height: 0.1em;
+	background: var(--clr-link-active);
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: transform var(--transition-duration-link) ease-in;
+}
+a:hover::before,
+a:focus::before {
+	transform: scaleX(1);
+	transform-origin: left;
 }
 
 /*
- * Banners
+ * Layout
  */
 
+/* Alerts */
 #alerts {
 	position: sticky;
 	top: 0;
@@ -191,17 +199,53 @@ header img.icon {
 	color: var(--clr-banner-warning-text);
 }
 
-/*
- * Navigation
- */
-
-menu .toggle {
-	display: none;
+/* Wrapper */
+#wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: var(--spacing-content-vertical);
+	padding: var(--spacing-content-vertical);
+	min-height: 100vh;
+	color: var(--clr-text);
 }
+@media screen and (max-width: 450px) {
+	/* Remove padding for small screens */
+	#wrapper {
+		padding-inline: 0;
+		padding-bottom: 0;
+	}
+}
+
+/* Header */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	column-gap: 2rem;
+	font-family: "Roboto", sans-serif;
+	font-size: 4.5em;
+}
+header img.icon {
+	width: 10rem;
+}
+@media screen and (max-width: 900px) {
+	header {
+		flex-direction: column;
+		font-size: clamp(2em, 11vw, 4.5em);
+	}
+	header img.icon {
+		width: clamp(12rem, 25vw, 14rem);
+	}
+}
+
+/* Navigation */
+menu .toggle,
 menu input[type=checkbox] {
 	display: none;
 }
-
 menu {
 	display: flex;
 	flex-wrap: wrap;
@@ -234,11 +278,11 @@ nav li:has(ul) > a::after {
 	font-size: 0.75em;
 	padding-left: 0.2em;
 	top: -0.1em;
-	content: "\f107";
+	content: "\f107"; /* fa-angle-down */
 }
 nav li:has(ul):hover > a::after,
 nav li:has(ul):focus-within > a::after {
-	content: "\f106";
+	content: "\f106"; /* fa-angle-up */
 }
 nav li > ul {
 	background: var(--clr-brand-gray);
@@ -260,39 +304,6 @@ nav li > ul {
 nav li:hover > ul,
 nav li:focus-within > ul {
 	display: flex;
-}
-
-a {
-	display: inline-block;
-	position: relative;
-	padding-bottom: 0.3em;
-	text-decoration: none;
-	color: var(--clr-text);
-	transition: color var(--transition-duration) var(--transition-curve-default);
-}
-a:focus,
-a:hover {
-	color: var(--clr-link-active);
-}
-a:focus {
-	outline: none;
-}
-a::before {
-	content: '';
-	position: absolute;
-	bottom: 0.15em;
-	left: 0;
-	width: 100%;
-	height: 0.1em;
-	background: var(--clr-link-active);
-	transform: scaleX(0);
-	transform-origin: right;
-	transition: transform var(--transition-duration) ease-in;
-}
-a:hover::before,
-a:focus::before {
-	transform: scaleX(1);
-	transform-origin: left;
 }
 
 /* Mobile navigation */
@@ -327,8 +338,8 @@ a:focus::before {
 		z-index: 15;
 		background: var(--clr-brand-gray);
 		transition-property: width;
-		transition-duration: var(--transition-duration);
-		transition-timing-function: var(--transition-curve-bezier);
+		transition-duration: var(--transition-duration-menu);
+		transition-timing-function: var(--transition-curve-menu);
 	}
 	menu .toggle:has(.menu-btn:checked) {
 		width: var(--width-menu);
@@ -411,8 +422,8 @@ a:focus::before {
 		z-index: 10;
 		left: calc(-1 * var(--width-menu));
 		transition-property: left;
-		transition-duration: var(--transition-duration);
-		transition-timing-function: var(--transition-curve-bezier);
+		transition-duration: var(--transition-duration-menu);
+		transition-timing-function: var(--transition-curve-menu);
 		padding-top: var(--size-menu-btn);
 	}
 	menu .toggle:has(.menu-btn:checked) + nav {
@@ -431,7 +442,7 @@ a:focus::before {
 		display: block;
 		flex-grow: 1;
 		transition-property: background, backdrop-filter;
-		transition-duration: var(--transition-duration);
+		transition-duration: var(--transition-duration-menu);
 		transition-timing-function: var(--transition-curve-default);
 	}
 	menu .toggle:has(.menu-btn:checked) + nav + .shade {
@@ -440,36 +451,19 @@ a:focus::before {
 	}
 }
 
-/*
- * Layout & general styling
- */
-
-p + p,
-p + section,
-section + section,
-section + p {
-	margin-top: 1em;
+/* Content */
+#content {
+	max-width: var(--width-content);
+	padding: 2rem 2.5rem;
+	background: var(--clr-content-bg);
+	backdrop-filter: blur(0.25rem);
+	font-weight: 400;
+	border: var(--border-content);
+	border-radius: 0.5rem;
+	box-shadow: 0 0 1.5rem 0.5rem var(--clr-shadow-content);
 }
-
-/*
- * Responsive design stuff
- */
-
-@media screen and (max-width: 900px) {
-	header {
-		flex-direction: column;
-		font-size: clamp(2em, 11vw, 4.5em);
-	}
-	header img.icon {
-		width: clamp(12rem, 25vw, 14rem);
-	}
-}
-
 @media screen and (max-width: 450px) {
-	#wrapper {
-		padding-inline: 0;
-		padding-bottom: 0;
-	}
+	/* Remove padding for small screens */
 	#content {
 		border-radius: 0;
 		border-left: none;
