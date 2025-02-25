@@ -45,10 +45,10 @@
 	/* Menu */
 	--clr-menu-text: var(--clr-text);
 
-	--size-menu-btn: 50px;
-	--size-menu-hamburger-spacing: 5px;
-	--size-menu-hamburger-width: 18px;
-	--size-menu-hamburger-height: 2px;
+	--size-menu-btn: 3rem;
+	--size-menu-hamburger-spacing: 0.375rem;
+	--size-menu-hamburger-width: 1.125rem;
+	--size-menu-hamburger-height: 0.125rem;
 	--spacing-menu-vertical: 0.5rem;
 	--width-menu: 20rem;
 
@@ -57,7 +57,7 @@
 
 	/* Content */
 	--clr-content-bg: #a3a3a330;
-	--border-content: 1px solid #222;
+	--border-content: 0.0625rem solid #222;
 	--spacing-content-vertical: 2rem;	
 	--width-content:  1250px;
 }
@@ -190,7 +190,7 @@ a:focus::before {
 	text-align: center;
 }
 .banner:last-child {
-	border-bottom-width: 1px;
+	border-bottom-width: 0.0625rem;
 	border-bottom-style: solid;
 	box-shadow: 0 0 0.5rem var(--clr-shadow-content);
 	clip-path: inset(0 -0.5rem -0.5rem -0.5rem);
