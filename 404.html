@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Page Not Found - TheRealEm_VP</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<link rel="icon" type="image/svg+xml" href="assets/icons/icon.svg">
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+	<link rel="manifest" href="/manifest.json">
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EBVGK2XR4Y"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-EBVGK2XR4Y');
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/fa-v5-font-face.min.css" />
+	<script src="js/particles.min.js"></script>
+</head>
+<body>
+	<div class="noise"></div>
+	<div id="particles-js"></div>
+	<div id="alerts">
+		<div class="banner warning">
+			<p>This website is currently under construction. Changes may occur. Please check back <i>Soon™</i>.</p>
+		</div>
+	</div>
+	<div id="wrapper">
+		<header>
+			<img class="icon" src="assets/icons/icon.svg" alt="TheRealEmVP logo" />
+			<span>TheRealEm_VP</span>
+		</header>
+
+		<menu>
+			<div class="toggle">
+				<input type="checkbox" id="menu-btn" name="menu-btn" class="menu-btn" />
+				<label class="menu-icon" for="menu-btn">
+					<span class="navicon" aria-label="Hamburger menu icon" />
+				</label>
+			</div>
+
+			<nav>
+				<ul>
+					<li><a href="#">One</a></li>
+					<li><a href="#">Two</a></li>
+					<li>
+						<a href="#">Three</a>
+						<ul>
+							<li><a href="#">Test A</a></li>
+							<li><a href="#">Test B</a></li>
+							<li><a href="#">Test C</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Four</a></li>
+					<li><a href="#">Five</a></li>
+				</ul>
+			</nav>
+
+			<label class="shade" for="menu-btn"></label>
+		</menu>
+
+		<div id="content">
+			<h1>404</h1>
+			<p>The page you were looking for does not exist, or has been moved.</p>
+			<p><a href="/">Go to homepage</a></p>
+		</div>
+	</div>
+
+	<script>
+		particlesJS.load('particles-js', 'js/particles.json', function() {
+			console.log('callback - particles.js config loaded');
+		});
+	</script>
+</body>
+</html>
