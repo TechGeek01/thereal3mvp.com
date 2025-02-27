@@ -16,6 +16,7 @@
 
 	/* General stuff */
 	--clr-accent: var(--clr-brand-red);
+	--clr-accent-light: #ee3b24;
 	--clr-shade: var(--clr-transparent-black);
 	--clr-shadow: var(--clr-transparent-black);
 
@@ -23,6 +24,14 @@
 	--size-text: 1.25rem;
 	--clr-link: var(--clr-accent);
 	--clr-link-active: var(--clr-accent);
+
+	--clr-button: var(--clr-accent);
+	--clr-button-hover: var(--clr-accent-light);
+	--clr-button-text: var(--clr-brand-white);
+	--clr-button-dark: #464643;
+	--clr-button-dark-hover: #4d4d4a;
+	--clr-button-coffee: #ffdd00;
+	--clr-button-coffee-hover: #ffea00;
 
 	--transition-curve-default: ease-in-out;
 	--transition-duration-link: 300ms;
@@ -145,8 +154,36 @@ section + p {
 	margin-top: 1em;
 }
 
+/* Buttons */
+a.button {
+	display: inline-flex;
+	padding: 0.45em 0.7em;
+	align-items: center;
+	background: var(--clr-button);
+	color: var(--clr-button-text);
+	border-radius: 0.25rem;
+	box-shadow: 0 0 0.5rem var(--clr-shadow);
+	font-size: 1.25em;
+	font-weight: 500;
+	font-family: "Oswald", sans-serif;
+	font-variant: small-caps;
+	transition: background 0.1s ease;
+}
+a.button.dark {
+	background: var(--clr-button-dark);
+}
+a.button, a.button:hover, a.button:active {
+	text-decoration: none;
+}
+a.button:hover {
+	background: var(--clr-button-hover);
+}
+a.button.dark:hover {
+	background: var(--clr-button-dark-hover);
+}
+
 /* Links */
-a {
+a:not(.button) {
 	display: inline-block;
 	position: relative;
 	padding-bottom: 0.3em;
@@ -154,14 +191,14 @@ a {
 	color: var(--clr-text);
 	transition: color var(--transition-duration-link) var(--transition-curve-default);
 }
-a:focus,
-a:hover {
+a:not(.button):focus,
+a:not(.button):hover {
 	color: var(--clr-link-active);
 }
-a:focus {
+a:not(.button):focus {
 	outline: none;
 }
-a::before {
+a:not(.button)::before {
 	content: '';
 	position: absolute;
 	bottom: 0.15em;
@@ -173,8 +210,8 @@ a::before {
 	transform-origin: right;
 	transition: transform var(--transition-duration-link) ease-in;
 }
-a:hover::before,
-a:focus::before {
+a:not(.button):hover::before,
+a:not(.button):focus::before {
 	transform: scaleX(1);
 	transform-origin: left;
 }
