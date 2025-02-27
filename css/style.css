@@ -154,6 +154,12 @@ section + p {
 	margin-top: 1em;
 }
 
+/* Error pages */
+h1.error {
+	font-size: 3.5em;
+	font-style: italic;
+}
+
 /* Buttons */
 a.button {
 	display: inline-flex;
