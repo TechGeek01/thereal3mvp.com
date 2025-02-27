@@ -188,6 +188,17 @@ a.button.dark:hover {
 	background: var(--clr-button-dark-hover);
 }
 
+a.button.coffee {
+	padding: 0.75em;
+	background: var(--clr-button-coffee);
+}
+a.button.coffee:hover {
+	background: var(--clr-button-coffee-hover);
+}
+a.button.coffee img {
+	height: 1.5em;
+}
+
 /* Links */
 a:not(.button) {
 	display: inline-block;
