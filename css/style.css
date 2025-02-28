@@ -173,7 +173,12 @@ a.button {
 	font-weight: 500;
 	font-family: "Oswald", sans-serif;
 	font-variant: small-caps;
-	transition: background 0.1s ease;
+	transition-property: background, top, left, box-shadow;
+	transition-duration: 0.1s;
+	transition-timing-function: var(--transition-curve-default);
+	position: relative;
+	top: 0;
+	left: 0;
 }
 a.button.dark {
 	background: var(--clr-button-dark);
@@ -183,6 +188,9 @@ a.button, a.button:hover, a.button:active {
 }
 a.button:hover {
 	background: var(--clr-button-hover);
+	top: -0.1rem;
+	left: -0.1rem;
+	box-shadow: 0.2rem 0.2rem 0.5rem var(--clr-shadow);
 }
 a.button.dark:hover {
 	background: var(--clr-button-dark-hover);
