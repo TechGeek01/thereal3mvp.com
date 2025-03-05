@@ -255,11 +255,11 @@ a:not(.button):focus::before {
 	font-weight: 500;
 	padding: var(--pad-block-banner) var(--pad-inline-banner);
 	text-align: center;
-}
-.banner:last-child {
 	border-bottom-width: 0.0625rem;
 	border-bottom-style: solid;
-	box-shadow: 0 0 0.5rem var(--clr-shadow-content);
+}
+.banner:last-child {
+	box-shadow: 0 0.25rem 0.5rem var(--clr-shadow);
 	clip-path: inset(0 -0.5rem -0.5rem -0.5rem);
 }
 .banner.warning {
