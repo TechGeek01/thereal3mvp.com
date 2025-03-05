@@ -43,6 +43,15 @@
 	--clr-bg2: #282824;
 
 	/* Alerts */
+	--clr-banner: #d2d2d2;
+	--clr-banner-border: #b0b0b0;
+	--clr-banner-text: #222;
+	--clr-banner-dark: #282824;
+	--clr-banner-dark-border: #42423b;
+	--clr-banner-dark-text: var(--clr-brand-white);
+	--clr-banner-info: #55e1ff;
+	--clr-banner-info-border: #00c7f2;
+	--clr-banner-info-text: #222;
 	--clr-banner-warning: #ffe33b;
 	--clr-banner-warning-border: #ecca00;
 	--clr-banner-warning-text: #222;
@@ -255,12 +264,25 @@ a:not(.button):focus::before {
 	font-weight: 500;
 	padding: var(--pad-block-banner) var(--pad-inline-banner);
 	text-align: center;
+	background: var(--clr-banner);
 	border-bottom-width: 0.0625rem;
 	border-bottom-style: solid;
+	border-bottom-color: var(--clr-banner-border);
+	color: var(--clr-banner-text);
 }
 .banner:last-child {
 	box-shadow: 0 0.25rem 0.5rem var(--clr-shadow);
 	clip-path: inset(0 -0.5rem -0.5rem -0.5rem);
+}
+.banner.dark {
+	background: var(--clr-banner-dark);
+	border-bottom-color: var(--clr-banner-dark-border);
+	color: var(--clr-banner-dark-text);
+}
+.banner.info {
+	background: var(--clr-banner-info);
+	border-bottom-color: var(--clr-banner-info-border);
+	color: var(--clr-banner-info-text);
 }
 .banner.warning {
 	background: var(--clr-banner-warning);
