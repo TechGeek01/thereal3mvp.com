@@ -121,7 +121,7 @@ body {
 	height: 100%;
 	top: 0;
 	z-index: -5;
-	background: url(../img/noise.svg) repeat;
+	background: url(../assets/img/noise.svg) repeat;
 	mix-blend-mode: multiply;
 }
 .noise {
