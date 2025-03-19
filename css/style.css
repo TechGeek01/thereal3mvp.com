@@ -22,7 +22,7 @@
 	--clr-text: #eee;
 	--size-text: 1.25rem;
 	--clr-link: var(--clr-accent);
-	--clr-link-active: var(--clr-accent);
+	--clr-link-active: #f65202;
 
 	--clr-button: var(--clr-accent);
 	--clr-button-hover: var(--clr-accent-light);
@@ -222,7 +222,7 @@ a:not(.button) {
 	padding-bottom: 0.2em;
 	margin-bottom: -0.2em;
 	text-decoration: none;
-	color: var(--clr-text);
+	color: var(--clr-link);
 	transition: color var(--transition-duration-link) var(--transition-curve-default);
 }
 a:not(.button):focus,
