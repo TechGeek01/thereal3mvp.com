@@ -219,7 +219,8 @@ a.button.coffee img {
 a:not(.button) {
 	display: inline-block;
 	position: relative;
-	padding-bottom: 0.3em;
+	padding-bottom: 0.2em;
+	margin-bottom: -0.2em;
 	text-decoration: none;
 	color: var(--clr-text);
 	transition: color var(--transition-duration-link) var(--transition-curve-default);
