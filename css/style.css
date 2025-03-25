@@ -162,6 +162,19 @@ section + p {
 	margin-top: 1em;
 }
 
+/* Icons */
+a.icon img {
+	display: inline-block;
+	height: 2.5rem;
+	width: 2.5rem;
+	filter: grayscale(100%) brightness(1.2);
+	transition: filter var(--transition-duration-link) var(--transition-curve-default);
+}
+a.icon:hover img,
+a.icon:focus img {
+	filter: none;
+}
+
 /* Error pages */
 h1.error {
 	font-size: 3.5em;
@@ -216,7 +229,7 @@ a.button.coffee img {
 }
 
 /* Links */
-a:not(.button) {
+a:not(.button, .icon) {
 	display: inline-block;
 	position: relative;
 	padding-bottom: 0.2em;
@@ -225,14 +238,14 @@ a:not(.button) {
 	color: var(--clr-link);
 	transition: color var(--transition-duration-link) var(--transition-curve-default);
 }
-a:not(.button):focus,
-a:not(.button):hover {
+a:not(.button, .icon):focus,
+a:not(.button, .icon):hover {
 	color: var(--clr-link-active);
 }
-a:not(.button):focus {
+a:not(.button, .icon):focus {
 	outline: none;
 }
-a:not(.button)::before {
+a:not(.button, .icon)::before {
 	content: '';
 	position: absolute;
 	bottom: 0.15em;
@@ -244,8 +257,8 @@ a:not(.button)::before {
 	transform-origin: right;
 	transition: transform var(--transition-duration-link) ease-in;
 }
-a:not(.button):hover::before,
-a:not(.button):focus::before {
+a:not(.button, .icon):hover::before,
+a:not(.button, .icon):focus::before {
 	transform: scaleX(1);
 	transform-origin: left;
 }
@@ -358,6 +371,13 @@ nav > ul {
 }
 nav li {
 	list-style: none;
+	display: inline-block;
+}
+nav li.socials {
+	display: flex;
+	gap: 0.5rem;
+}
+nav li.socials > * {
 	display: inline-block;
 }
 nav li a {
