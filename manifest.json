@@ -1,12 +1,12 @@
 {
-  "name": "TheRealEm_VP",
-  "short_name": "TheRealEm_VP",
+  "name": "TheRealEmVP",
+  "short_name": "TheRealEmVP",
   "theme_color": "#dd3700",
   "background_color": "#282824",
   "display": "standalone",
   "scope": "/",
   "start_url": "https://therealemvp.com/",
-  "description": "TheRealEm_VP",
+  "description": "TheRealEmVP",
   "orientation": "any",
   "icons": [
     {
