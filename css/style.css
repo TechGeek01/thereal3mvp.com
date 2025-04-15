@@ -190,7 +190,7 @@ a.button {
 	color: var(--clr-button-text);
 	border-radius: 0.25rem;
 	box-shadow: 0 0 0.5rem var(--clr-shadow);
-	font-size: 1.25em;
+	font-size: 1.2rem;
 	font-weight: 500;
 	font-family: "Oswald", sans-serif;
 	font-variant: small-caps;
@@ -226,6 +226,20 @@ a.button.coffee:hover {
 }
 a.button.coffee img {
 	height: 1.5em;
+}
+
+a.button .material-symbols-outlined {
+	font-size: 4.5em;
+	margin-top: -0.2em;
+}
+a.button.fancy {
+	display: inline-flex;
+	flex-direction: row;
+	justify-content: center;
+}
+a.button.fancy div {
+	margin-left: 0.5em;
+	padding-inline: 0.3em;
 }
 
 /* Links */
@@ -266,6 +280,20 @@ a:not(.button, .icon):focus::before {
 /*
  * Layout
  */
+
+.controls {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1.2em;
+	margin-block: 1.2em;
+}
+.controls .group {
+	display: flex;
+	justify-content: center;
+	gap: 1.2em;
+	flex-wrap: wrap;
+}
 
 /* Alerts */
 #alerts {
