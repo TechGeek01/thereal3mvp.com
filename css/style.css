@@ -229,6 +229,15 @@ a.button.coffee img {
 }
 
 /* Links */
+header a:not(.button, .icon),
+header a:not(.button, .icon):hover,
+header a:not(.button, .icon):focus {
+	color: inherit;
+}
+header a:not(.button, .icon)::before {
+	background: var(--clr-text);
+}
+
 a:not(.button, .icon) {
 	display: inline-block;
 	position: relative;
