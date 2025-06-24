@@ -236,6 +236,8 @@ header a:not(.button, .icon):focus {
 }
 header a:not(.button, .icon)::before {
 	background: var(--clr-text);
+	height: 0.08em;
+	bottom: 0.3em;
 }
 
 a:not(.button, .icon) {
