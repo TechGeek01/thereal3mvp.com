@@ -191,7 +191,7 @@ a:focus {
 /* Buttons */
 a.btn {
 	box-shadow: 0 0 0.5rem var(--clr-shadow);
-	transition-property: background, top, left, box-shadow;
+	transition-property: background, filter, top, left, box-shadow;
 	transition-duration: 0.1s;
 	transition-timing-function: var(--transition-curve-default);
 	position: relative;
@@ -267,9 +267,10 @@ a.btn.img > img {
 	z-index: 5;
 	flex: 1 1 100%;
 	filter: grayscale(20%) brightness(80%);
+	transition: filter 0.1s var(--transition-curve-default);
 }
-a.btn.img > img:hover,
-a.btn.img > img:focus {
+a.btn.img:hover > img,
+a.btn.img:focus > img {
 	filter: none;
 }
 a.btn.img div {
