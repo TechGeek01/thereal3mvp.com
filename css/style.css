@@ -74,7 +74,7 @@
 	--transition-duration-menu: 300ms;
 
 	/* Content */
-	--clr-content-bg: #a3a3a330;
+	--clr-content-bg: #2221;
 	--border-content: 0.0625rem solid #222;
 	--spacing-content-vertical: 2rem;	
 	--width-content:  1250px;
@@ -633,7 +633,6 @@ nav li:focus-within > ul {
 	-webkit-backdrop-filter: blur(0.25rem);
 	backdrop-filter: blur(0.25rem);
 	font-weight: 400;
-	border: var(--border-content);
 	border-radius: 0.5rem;
 	box-shadow: 0 0 1.5rem 0.5rem var(--clr-shadow-content);
 }
