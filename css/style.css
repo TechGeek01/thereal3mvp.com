@@ -247,6 +247,7 @@ a.button.coffee img {
 /* Image buttons */
 div.feature-buttons {
 	display: flex;
+	flex-wrap: wrap;
 	gap: 1em;
 }
 a.btn.img {
