@@ -183,19 +183,14 @@ h1.error {
 	font-style: italic;
 }
 
+/* Links */
+a:focus {
+	outline: none;
+}
+
 /* Buttons */
-a.button {
-	display: inline-flex;
-	padding: 0.45em 0.7em;
-	align-items: center;
-	background: var(--clr-button);
-	color: var(--clr-button-text);
-	border-radius: 0.25rem;
+a.btn {
 	box-shadow: 0 0 0.5rem var(--clr-shadow);
-	font-size: 1.25em;
-	font-weight: 500;
-	font-family: "Oswald", sans-serif;
-	font-variant: small-caps;
 	transition-property: background, top, left, box-shadow;
 	transition-duration: 0.1s;
 	transition-timing-function: var(--transition-curve-default);
@@ -203,17 +198,36 @@ a.button {
 	top: 0;
 	left: 0;
 }
-a.button.dark {
-	background: var(--clr-button-dark);
-}
-a.button, a.button:hover, a.button:active {
-	text-decoration: none;
-}
-a.button:hover {
-	background: var(--clr-button-hover);
+a.btn:hover,
+a.btn:focus {
 	top: -0.1rem;
 	left: -0.1rem;
 	box-shadow: 0.2rem 0.2rem 0.5rem var(--clr-shadow);
+}
+a.btn,
+a.btn:hover,
+a.btn:focus,
+a.btn:active {
+	text-decoration: none;
+}
+
+a.button {
+	display: inline-flex;
+	padding: 0.45em 0.7em;
+	align-items: center;
+	background: var(--clr-button);
+	color: var(--clr-button-text);
+	border-radius: 0.25rem;
+	font-size: 1.25em;
+	font-weight: 500;
+	font-family: "Oswald", sans-serif;
+	font-variant: small-caps;
+}
+a.button.dark {
+	background: var(--clr-button-dark);
+}
+a.button:hover {
+	background: var(--clr-button-hover);
 }
 a.button.dark:hover {
 	background: var(--clr-button-dark-hover);
@@ -235,7 +249,7 @@ div.feature-buttons {
 	display: flex;
 	gap: 1em;
 }
-a.img-btn {
+a.btn.img {
 	display: flex;
 	flex-direction: column;
 	width: 10em;
@@ -245,14 +259,14 @@ a.img-btn {
 	border-radius: 0.5em;
 	position: relative;
 }
-a.img-btn > img {
+a.btn.img > img {
 	object-fit: cover;
 	overflow-y: hidden;
 	position: relative;
 	z-index: 5;
 	flex: 1 1 100%;
 }
-a.img-btn div {
+a.btn.img div {
 	background: var(--clr-shade);
 	color: var(--clr-brand-white);
 	position: absolute;
@@ -265,28 +279,28 @@ a.img-btn div {
 	display: flex;
 	gap: 0.5em;
 }
-a.img-btn div img {
+a.btn.img div img {
 	height: 1.2em;
 	align-self: center;
 }
-a.img-btn div span {
+a.btn.img div span {
 	flex: 1;
 	text-align: center;
 }
 
 /* Links */
-header a:not(.button, .img-btn, .icon),
-header a:not(.button, .img-btn, .icon):hover,
-header a:not(.button, .img-btn, .icon):focus {
+header a:not(.button, .btn, .icon),
+header a:not(.button, .btn, .icon):hover,
+header a:not(.button, .btn, .icon):focus {
 	color: inherit;
 }
-header a:not(.button, .img-btn, .icon)::before {
+header a:not(.button, .btn, .icon)::before {
 	background: var(--clr-text);
 	height: 0.08em;
 	bottom: 0.3em;
 }
 
-a:not(.button, .img-btn, .icon) {
+a:not(.button, .btn, .icon) {
 	display: inline-block;
 	position: relative;
 	padding-bottom: 0.2em;
@@ -295,14 +309,11 @@ a:not(.button, .img-btn, .icon) {
 	color: var(--clr-link);
 	transition: color var(--transition-duration-link) var(--transition-curve-default);
 }
-a:not(.button, .img-btn, .icon):focus,
-a:not(.button, .img-btn, .icon):hover {
+a:not(.button, .btn, .icon):focus,
+a:not(.button, .btn, .icon):hover {
 	color: var(--clr-link-active);
 }
-a:not(.button, .img-btn, .icon):focus {
-	outline: none;
-}
-a:not(.button, .img-btn, .icon)::before {
+a:not(.button, .btn, .icon)::before {
 	content: '';
 	position: absolute;
 	bottom: 0.15em;
@@ -314,8 +325,8 @@ a:not(.button, .img-btn, .icon)::before {
 	transform-origin: right;
 	transition: transform var(--transition-duration-link) ease-in;
 }
-a:not(.button, .img-btn, .icon):hover::before,
-a:not(.button, .img-btn, .icon):focus::before {
+a:not(.button, .btn, .icon):hover::before,
+a:not(.button, .btn, .icon):focus::before {
 	transform: scaleX(1);
 	transform-origin: left;
 }
