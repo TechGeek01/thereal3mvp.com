@@ -415,7 +415,7 @@ header img.icon {
 		font-size: clamp(2em, 11vw, 4.5em);
 	}
 	header img.icon {
-		width: clamp(12rem, 25vw, 14rem);
+		height: clamp(12rem, 25vw, 14rem);
 	}
 }
 
