@@ -265,6 +265,11 @@ a.btn.img > img {
 	position: relative;
 	z-index: 5;
 	flex: 1 1 100%;
+	filter: grayscale(20%) brightness(80%);
+}
+a.btn.img > img:hover,
+a.btn.img > img:focus {
+	filter: none;
 }
 a.btn.img div {
 	background: var(--clr-shade);
