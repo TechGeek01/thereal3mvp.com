@@ -635,6 +635,7 @@ nav li:focus-within > ul {
 	font-weight: 400;
 	border-radius: 0.5rem;
 	box-shadow: 0 0 1.5rem 0.5rem var(--clr-shadow-content);
+	text-align: center;
 }
 @media screen and (max-width: 450px) {
 	/* Remove padding for small screens */
