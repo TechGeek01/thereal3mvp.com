@@ -12,11 +12,12 @@
 	--clr-brand-white: #eee;
 
 	--clr-transparent-black: #0006;
+	--clr-slightly-transparent-black: #000a;
 
 	/* General stuff */
 	--clr-accent: var(--clr-brand-red);
 	--clr-accent-light: #ee3b24;
-	--clr-shade: var(--clr-transparent-black);
+	--clr-shade: var(--clr-slightly-transparent-black);
 	--clr-shadow: var(--clr-transparent-black);
 
 	--clr-text: #eee;
@@ -228,19 +229,63 @@ a.button.coffee img {
 	height: 1.5em;
 }
 
+/* Image buttons */
+div.feature-buttons {
+	display: flex;
+	gap: 1em;
+}
+a.img-btn {
+	display: flex;
+	flex-direction: column;
+	width: 10em;
+	height: 10em;
+	overflow: hidden;
+	border: 1px solid var(--clr-brand-red);
+	border-radius: 0.5em;
+	position: relative;
+}
+a.img-btn > img {
+	object-fit: cover;
+	overflow-y: hidden;
+	position: relative;
+	z-index: 5;
+	flex: 1 1 100%;
+}
+a.img-btn div {
+	background: var(--clr-shade);
+	color: var(--clr-brand-white);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	font-size: 0.8em;
+	padding: 0.25em 0.5em;
+	display: flex;
+	gap: 0.5em;
+}
+a.img-btn div img {
+	height: 1.2em;
+	align-self: center;
+}
+a.img-btn div span {
+	flex: 1;
+	text-align: center;
+}
+
 /* Links */
-header a:not(.button, .icon),
-header a:not(.button, .icon):hover,
-header a:not(.button, .icon):focus {
+header a:not(.button, .img-btn, .icon),
+header a:not(.button, .img-btn, .icon):hover,
+header a:not(.button, .img-btn, .icon):focus {
 	color: inherit;
 }
-header a:not(.button, .icon)::before {
+header a:not(.button, .img-btn, .icon)::before {
 	background: var(--clr-text);
 	height: 0.08em;
 	bottom: 0.3em;
 }
 
-a:not(.button, .icon) {
+a:not(.button, .img-btn, .icon) {
 	display: inline-block;
 	position: relative;
 	padding-bottom: 0.2em;
@@ -249,14 +294,14 @@ a:not(.button, .icon) {
 	color: var(--clr-link);
 	transition: color var(--transition-duration-link) var(--transition-curve-default);
 }
-a:not(.button, .icon):focus,
-a:not(.button, .icon):hover {
+a:not(.button, .img-btn, .icon):focus,
+a:not(.button, .img-btn, .icon):hover {
 	color: var(--clr-link-active);
 }
-a:not(.button, .icon):focus {
+a:not(.button, .img-btn, .icon):focus {
 	outline: none;
 }
-a:not(.button, .icon)::before {
+a:not(.button, .img-btn, .icon)::before {
 	content: '';
 	position: absolute;
 	bottom: 0.15em;
@@ -268,8 +313,8 @@ a:not(.button, .icon)::before {
 	transform-origin: right;
 	transition: transform var(--transition-duration-link) ease-in;
 }
-a:not(.button, .icon):hover::before,
-a:not(.button, .icon):focus::before {
+a:not(.button, .img-btn, .icon):hover::before,
+a:not(.button, .img-btn, .icon):focus::before {
 	transform: scaleX(1);
 	transform-origin: left;
 }
