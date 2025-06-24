@@ -34,6 +34,7 @@
 	--clr-button-coffee-hover: #ffea00;
 
 	--transition-curve-default: ease-in-out;
+	--transition-duration-btn: 100ms;
 	--transition-duration-link: 300ms;
 
 	/* Background */
@@ -192,7 +193,7 @@ a:focus {
 a.btn {
 	box-shadow: 0 0 0.5rem var(--clr-shadow);
 	transition-property: background, filter, top, left, box-shadow;
-	transition-duration: 0.1s;
+	transition-duration: var(--transition-duration-btn);
 	transition-timing-function: var(--transition-curve-default);
 	position: relative;
 	top: 0;
@@ -267,7 +268,7 @@ a.btn.img > img {
 	z-index: 5;
 	flex: 1 1 100%;
 	filter: grayscale(20%) brightness(80%);
-	transition: filter 0.1s var(--transition-curve-default);
+	transition: filter var(--transition-duration-btn) var(--transition-curve-default);
 }
 a.btn.img:hover > img,
 a.btn.img:focus > img {
