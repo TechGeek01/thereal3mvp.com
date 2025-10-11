@@ -5,7 +5,7 @@
   "background_color": "#282824",
   "display": "standalone",
   "scope": "/",
-  "start_url": "https://thereal3mvp.com/",
+  "start_url": "/?source=pwa",
   "description": "TheRealEmVP",
   "orientation": "any",
   "icons": [
