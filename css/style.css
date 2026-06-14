@@ -144,12 +144,6 @@ body {
 	}
 }
 
-#particles-js {
-	position: fixed;
-	inset: 0;
-	z-index: -4;
-}
-
 /* General styling */
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Oswald", sans-serif;
