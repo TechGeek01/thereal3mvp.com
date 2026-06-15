@@ -341,7 +341,7 @@ a.btn {
 		}
 
 		div.title {
-			background: var(--clr-shade);
+			background: #000a;
 			color: var(--clr-brand-white);
 			position: absolute;
 			bottom: 0;
