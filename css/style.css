@@ -639,6 +639,10 @@ body:has(.menu-btn:checked) {
 				flex-direction: row;
 				gap: 1.5rem;
 				align-items: center;
+
+				li.menu-only {
+					display: none;
+				}
 			}
 
 			/* Desktop dropdown positioning */
